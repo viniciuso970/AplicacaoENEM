@@ -11,11 +11,12 @@
 package Controle;
 
 import java.util.ArrayList;
+import org.hibernate.Session;
 
 
 public class ControleRelatorios {
 
-    public ControleRelatorios() {
+    public ControleRelatorios(Session session) {
         
     }
 

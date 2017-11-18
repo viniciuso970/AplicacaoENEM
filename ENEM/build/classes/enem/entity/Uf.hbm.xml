@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Nov 18, 2017 4:44:35 AM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="enem.entity.Uf" table="uf" catalog="enem" optimistic-lock="version">
+        <id name="codUf" type="byte">
+            <column name="COD_UF" />
+            <generator class="assigned" />
+        </id>
+        <property name="nomeUf" type="string">
+            <column name="NOME_UF" length="2" />
+        </property>
+        <set name="candidatosForCodUfNascimento" table="candidato" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="COD_UF_NASCIMENTO" />
+            </key>
+            <one-to-many class="enem.entity.Candidato" />
+        </set>
+        <set name="candidatosForCodUfResidencia" table="candidato" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="COD_UF_RESIDENCIA" />
+            </key>
+            <one-to-many class="enem.entity.Candidato" />
+        </set>
+        <set name="escolas" table="escola" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="COD_UF_ESC" />
+            </key>
+            <one-to-many class="enem.entity.Escola" />
+        </set>
+        <set name="candidatosForCodUfProva" table="candidato" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="COD_UF_PROVA" />
+            </key>
+            <one-to-many class="enem.entity.Candidato" />
+        </set>
+    </class>
+</hibernate-mapping>

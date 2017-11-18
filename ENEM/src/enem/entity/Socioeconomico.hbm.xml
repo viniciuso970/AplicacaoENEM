@@ -1,0 +1,243 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Nov 18, 2017 4:44:35 AM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="enem.entity.Socioeconomico" table="socioeconomico" catalog="enem" optimistic-lock="version">
+        <id name="nuInscricao" type="long">
+            <column name="NU_INSCRICAO" />
+            <generator class="foreign">
+                <param name="property">candidato</param>
+            </generator>
+        </id>
+        <one-to-one name="candidato" class="enem.entity.Candidato" constrained="true"></one-to-one>
+        <property name="q001" type="string">
+            <column name="Q001" length="1" />
+        </property>
+        <property name="q002" type="string">
+            <column name="Q002" length="1" />
+        </property>
+        <property name="q003" type="string">
+            <column name="Q003" length="1" />
+        </property>
+        <property name="q004" type="java.lang.Byte">
+            <column name="Q004" />
+        </property>
+        <property name="q005" type="string">
+            <column name="Q005" length="1" />
+        </property>
+        <property name="q006" type="string">
+            <column name="Q006" length="1" />
+        </property>
+        <property name="q007" type="string">
+            <column name="Q007" length="1" />
+        </property>
+        <property name="q008" type="string">
+            <column name="Q008" length="1" />
+        </property>
+        <property name="q009" type="string">
+            <column name="Q009" length="1" />
+        </property>
+        <property name="q010" type="string">
+            <column name="Q010" length="1" />
+        </property>
+        <property name="q011" type="string">
+            <column name="Q011" length="1" />
+        </property>
+        <property name="q012" type="string">
+            <column name="Q012" length="1" />
+        </property>
+        <property name="q013" type="string">
+            <column name="Q013" length="1" />
+        </property>
+        <property name="q014" type="string">
+            <column name="Q014" length="1" />
+        </property>
+        <property name="q015" type="string">
+            <column name="Q015" length="1" />
+        </property>
+        <property name="q016" type="string">
+            <column name="Q016" length="1" />
+        </property>
+        <property name="q017" type="string">
+            <column name="Q017" length="1" />
+        </property>
+        <property name="q018" type="string">
+            <column name="Q018" length="1" />
+        </property>
+        <property name="q019" type="string">
+            <column name="Q019" length="1" />
+        </property>
+        <property name="q020" type="string">
+            <column name="Q020" length="1" />
+        </property>
+        <property name="q021" type="string">
+            <column name="Q021" length="1" />
+        </property>
+        <property name="q022" type="string">
+            <column name="Q022" length="1" />
+        </property>
+        <property name="q023" type="java.lang.Boolean">
+            <column name="Q023" />
+        </property>
+        <property name="q024" type="java.lang.Boolean">
+            <column name="Q024" />
+        </property>
+        <property name="q025" type="java.lang.Boolean">
+            <column name="Q025" />
+        </property>
+        <property name="q026" type="java.lang.Boolean">
+            <column name="Q026" />
+        </property>
+        <property name="q027" type="java.lang.Boolean">
+            <column name="Q027" />
+        </property>
+        <property name="q028" type="java.lang.Boolean">
+            <column name="Q028" />
+        </property>
+        <property name="q029" type="java.lang.Boolean">
+            <column name="Q029" />
+        </property>
+        <property name="q030" type="string">
+            <column name="Q030" length="1" />
+        </property>
+        <property name="q031" type="string">
+            <column name="Q031" length="1" />
+        </property>
+        <property name="q032" type="string">
+            <column name="Q032" length="1" />
+        </property>
+        <property name="q033" type="string">
+            <column name="Q033" length="1" />
+        </property>
+        <property name="q034" type="string">
+            <column name="Q034" length="1" />
+        </property>
+        <property name="q035" type="string">
+            <column name="Q035" length="1" />
+        </property>
+        <property name="q036" type="string">
+            <column name="Q036" length="1" />
+        </property>
+        <property name="q037" type="string">
+            <column name="Q037" length="1" />
+        </property>
+        <property name="q038" type="string">
+            <column name="Q038" length="1" />
+        </property>
+        <property name="q039" type="string">
+            <column name="Q039" length="1" />
+        </property>
+        <property name="q040" type="java.lang.Byte">
+            <column name="Q040" />
+        </property>
+        <property name="q041" type="string">
+            <column name="Q041" length="1" />
+        </property>
+        <property name="q042" type="string">
+            <column name="Q042" length="1" />
+        </property>
+        <property name="q043" type="string">
+            <column name="Q043" length="1" />
+        </property>
+        <property name="q044" type="string">
+            <column name="Q044" length="1" />
+        </property>
+        <property name="q045" type="string">
+            <column name="Q045" length="1" />
+        </property>
+        <property name="q046" type="string">
+            <column name="Q046" length="1" />
+        </property>
+        <property name="q047" type="string">
+            <column name="Q047" length="1" />
+        </property>
+        <property name="q048" type="string">
+            <column name="Q048" length="1" />
+        </property>
+        <property name="q049" type="string">
+            <column name="Q049" length="1" />
+        </property>
+        <property name="q050" type="string">
+            <column name="Q050" length="1" />
+        </property>
+        <property name="q051" type="string">
+            <column name="Q051" length="1" />
+        </property>
+        <property name="q052" type="string">
+            <column name="Q052" length="1" />
+        </property>
+        <property name="q053" type="string">
+            <column name="Q053" length="1" />
+        </property>
+        <property name="q054" type="string">
+            <column name="Q054" length="1" />
+        </property>
+        <property name="q055" type="string">
+            <column name="Q055" length="1" />
+        </property>
+        <property name="q056" type="string">
+            <column name="Q056" length="1" />
+        </property>
+        <property name="q057" type="string">
+            <column name="Q057" length="1" />
+        </property>
+        <property name="q058" type="string">
+            <column name="Q058" length="1" />
+        </property>
+        <property name="q059" type="string">
+            <column name="Q059" length="1" />
+        </property>
+        <property name="q060" type="string">
+            <column name="Q060" length="1" />
+        </property>
+        <property name="q061" type="string">
+            <column name="Q061" length="1" />
+        </property>
+        <property name="q062" type="string">
+            <column name="Q062" length="1" />
+        </property>
+        <property name="q063" type="string">
+            <column name="Q063" length="1" />
+        </property>
+        <property name="q064" type="string">
+            <column name="Q064" length="1" />
+        </property>
+        <property name="q065" type="string">
+            <column name="Q065" length="1" />
+        </property>
+        <property name="q066" type="string">
+            <column name="Q066" length="1" />
+        </property>
+        <property name="q067" type="string">
+            <column name="Q067" length="1" />
+        </property>
+        <property name="q068" type="string">
+            <column name="Q068" length="1" />
+        </property>
+        <property name="q069" type="string">
+            <column name="Q069" length="1" />
+        </property>
+        <property name="q070" type="string">
+            <column name="Q070" length="1" />
+        </property>
+        <property name="q071" type="string">
+            <column name="Q071" length="1" />
+        </property>
+        <property name="q072" type="string">
+            <column name="Q072" length="1" />
+        </property>
+        <property name="q073" type="string">
+            <column name="Q073" length="1" />
+        </property>
+        <property name="q074" type="string">
+            <column name="Q074" length="1" />
+        </property>
+        <property name="q075" type="string">
+            <column name="Q075" length="1" />
+        </property>
+        <property name="q076" type="string">
+            <column name="Q076" length="1" />
+        </property>
+    </class>
+</hibernate-mapping>

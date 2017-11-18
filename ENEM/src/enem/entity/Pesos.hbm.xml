@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Nov 18, 2017 4:44:35 AM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="enem.entity.Pesos" table="pesos" catalog="enem" optimistic-lock="version">
+        <id name="codPesos" type="int">
+            <column name="COD_PESOS" />
+            <generator class="assigned" />
+        </id>
+        <property name="noPesos" type="string">
+            <column name="NO_PESOS" length="100" unique="true" />
+        </property>
+        <property name="pesoCn" type="java.lang.Double">
+            <column name="PESO_CN" precision="9" />
+        </property>
+        <property name="pesoCh" type="java.lang.Double">
+            <column name="PESO_CH" precision="9" />
+        </property>
+        <property name="pesoLc" type="java.lang.Double">
+            <column name="PESO_LC" precision="9" />
+        </property>
+        <property name="pesoMt" type="java.lang.Double">
+            <column name="PESO_MT" precision="9" />
+        </property>
+        <property name="pesoRedacao" type="java.lang.Double">
+            <column name="PESO_REDACAO" precision="9" />
+        </property>
+    </class>
+</hibernate-mapping>

@@ -14,6 +14,7 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
@@ -31,15 +32,13 @@ public class TelaCRUDPesos implements EventHandler<ActionEvent> {
     private Stage stage;
 
     public TelaCRUDPesos(ControlePesos ctrPesos) {
-        
+
         this.ctrPesos = ctrPesos;
-        
+
         stage = new Stage();
 
         bCadPesos = new Button("Cadastrar Pesos");
-
         bCadPesos.setOnAction(this);
-
         bCadPesos.setId("font-button");
 
         lTitulo = new Label("Cadastro de Pesos");
@@ -97,16 +96,40 @@ public class TelaCRUDPesos implements EventHandler<ActionEvent> {
     public void handle(ActionEvent event) {
         if (event.getSource() == bCadPesos) {
             try {
-                int pesoCH = Integer.parseInt(textPesoCH.getText());
-                int pesoCN = Integer.parseInt(textPesoCN.getText());
-                int pesoLC = Integer.parseInt(textPesoLC.getText());
-                int pesoM = Integer.parseInt(textPesoM.getText());
-                int pesoR = Integer.parseInt(textPesoR.getText());
-                ctrPesos.cadastrarPesos(pesoCH, pesoCN, pesoLC, pesoM, pesoR);
-            } catch (ArithmeticException arithmetic) {
-                
+                if (textPesoCH.getText().isEmpty() || textPesoCN.getText().isEmpty()
+                        || textPesoLC.getText().isEmpty()
+                        || textPesoM.getText().isEmpty()
+                        || textPesoR.getText().isEmpty()) {
+                    throw new Exception("Campos não preenchidos");
+                }
+                String nome = textNome.getText();
+                double pesoCH = Double.parseDouble(textPesoCH.getText());
+                double pesoCN = Double.parseDouble(textPesoCN.getText());
+                double pesoLC = Double.parseDouble(textPesoLC.getText());
+                double pesoM = Double.parseDouble(textPesoM.getText());
+                double pesoR = Double.parseDouble(textPesoR.getText());
+                ctrPesos.cadastrarPesos(nome, pesoCH, pesoCN, pesoLC,
+                        pesoM, pesoR);
+                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                alert.setTitle("Cadastro dos pesos");
+                alert.setHeaderText("A inserção dos pesos ocorreu com sucesso");
+                alert.setContentText("O cadastro dos pesos foi realizado com sucesso");
+                alert.showAndWait();
+            } catch (NumberFormatException arithmetic) {
+                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                alert.setTitle("Erro no cadastro dos pesos");
+                alert.setHeaderText("A inserção dos pesos não ocorreu "
+                        + "como esperado");
+                alert.setContentText("Para cadastro dos pesos os valores "
+                        + "dos mesmos devem ser números inteiros ou reais.");
+                alert.showAndWait();
             } catch (Exception e) {
-                
+                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                alert.setTitle("Erro no cadastro dos pesos");
+                alert.setHeaderText("A inserção dos pesos não ocorreu "
+                        + "como esperado");
+                alert.setContentText(e.getMessage());
+                alert.showAndWait();
             }
         }
     }

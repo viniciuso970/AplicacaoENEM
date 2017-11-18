@@ -10,6 +10,7 @@
 package Visao;
 
 import Controle.ControlePesos;
+import Controle.ControlePrincipal;
 import Controle.ControleRelatorios;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -21,15 +22,20 @@ import javafx.stage.*;
 
 public class TelaPrincipal implements EventHandler<ActionEvent>{
 
+    private ControlePrincipal ctrPrincipal;
     private ControlePesos ctrPesos;
     private ControleRelatorios ctrRelatorios;
     private Button bRelatorios, bCadastrarPesos;
     private Label lTitulo;
     private GridPane grid;
+    
+    Stage primaryStage;
 
-    public TelaPrincipal(Stage primaryStage, ControlePesos ctrPesos, 
-            ControleRelatorios ctrRelatorios) {
+    public TelaPrincipal(ControlePrincipal ctrPrincipal, Stage pPrimaryStage, 
+            ControlePesos ctrPesos, ControleRelatorios ctrRelatorios) {
         
+        this.primaryStage = pPrimaryStage;
+        this.ctrPrincipal = ctrPrincipal;
         this.ctrPesos = ctrPesos;
         this.ctrRelatorios = ctrRelatorios;
         
@@ -56,7 +62,10 @@ public class TelaPrincipal implements EventHandler<ActionEvent>{
 
         Scene scene = new Scene(grid, grid.getMaxHeight(), grid.getMaxWidth());
         scene.getStylesheets().add(TelaPrincipal.class.getResource("Principal.css").toExternalForm());
-
+        
+        primaryStage.setOnCloseRequest((WindowEvent event) -> {
+            ctrPrincipal.fecharConexao();
+        });
         primaryStage.setTitle("Tela Principal");
         primaryStage.setScene(scene);
         primaryStage.setMaximized(true);

@@ -1,0 +1,143 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Nov 18, 2017 4:44:35 AM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="enem.entity.Candidato" table="candidato" catalog="enem" optimistic-lock="version">
+        <id name="nuInscricao" type="long">
+            <column name="nu_inscricao" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="escola" class="enem.entity.Escola" fetch="select">
+            <column name="COD_ESCOLA" />
+        </many-to-one>
+        <many-to-one name="municipioByCodMunicipioNascimento" class="enem.entity.Municipio" fetch="select">
+            <column name="COD_MUNICIPIO_NASCIMENTO" />
+        </many-to-one>
+        <many-to-one name="municipioByCodMunicipioProva" class="enem.entity.Municipio" fetch="select">
+            <column name="COD_MUNICIPIO_PROVA" />
+        </many-to-one>
+        <many-to-one name="municipioByCodMunicipioResidencia" class="enem.entity.Municipio" fetch="select">
+            <column name="COD_MUNICIPIO_residencia" />
+        </many-to-one>
+        <many-to-one name="ufByCodUfNascimento" class="enem.entity.Uf" fetch="select">
+            <column name="COD_UF_NASCIMENTO" />
+        </many-to-one>
+        <many-to-one name="ufByCodUfResidencia" class="enem.entity.Uf" fetch="select">
+            <column name="COD_UF_RESIDENCIA" />
+        </many-to-one>
+        <many-to-one name="ufByCodUfProva" class="enem.entity.Uf" fetch="select">
+            <column name="COD_UF_PROVA" />
+        </many-to-one>
+        <property name="nuAno" type="java.lang.Short">
+            <column name="nu_ano" />
+        </property>
+        <property name="inEstudaClasseHospitalar" type="java.lang.Boolean">
+            <column name="IN_ESTUDA_CLASSE_HOSPITALAR" />
+        </property>
+        <property name="idade" type="java.lang.Byte">
+            <column name="IDADE" />
+        </property>
+        <property name="tpSexo" type="string">
+            <column name="TP_SEXO" length="1" />
+        </property>
+        <property name="nacionalidade" type="java.lang.Boolean">
+            <column name="NACIONALIDADE" />
+        </property>
+        <property name="stConclusao" type="java.lang.Boolean">
+            <column name="ST_CONCLUSAO" />
+        </property>
+        <property name="anoConcluiu" type="java.lang.Short">
+            <column name="ANO_CONCLUIU" />
+        </property>
+        <property name="tpEscola" type="java.lang.Boolean">
+            <column name="TP_ESCOLA" />
+        </property>
+        <property name="inTpEnsino" type="java.lang.Boolean">
+            <column name="IN_TP_ENSINO" />
+        </property>
+        <property name="tpEstadoCivil" type="java.lang.Boolean">
+            <column name="TP_ESTADO_CIVIL" />
+        </property>
+        <property name="tpCorRaca" type="java.lang.Boolean">
+            <column name="TP_COR_RACA" />
+        </property>
+        <property name="inBaixaVisao" type="java.lang.Boolean">
+            <column name="IN_BAIXA_VISAO" />
+        </property>
+        <property name="inCegueira" type="java.lang.Boolean">
+            <column name="IN_CEGUEIRA" />
+        </property>
+        <property name="inSurdez" type="java.lang.Boolean">
+            <column name="IN_SURDEZ" />
+        </property>
+        <property name="inDeficienciaAuditiva" type="java.lang.Boolean">
+            <column name="IN_DEFICIENCIA_AUDITIVA" />
+        </property>
+        <property name="inSurdoCegueira" type="java.lang.Boolean">
+            <column name="IN_SURDO_CEGUEIRA" />
+        </property>
+        <property name="inDeficienciaFisica" type="java.lang.Boolean">
+            <column name="IN_DEFICIENCIA_FISICA" />
+        </property>
+        <property name="inDeficienciaMental" type="java.lang.Boolean">
+            <column name="IN_DEFICIENCIA_MENTAL" />
+        </property>
+        <property name="inDeficitAtencao" type="java.lang.Boolean">
+            <column name="IN_DEFICIT_ATENCAO" />
+        </property>
+        <property name="inDislexia" type="java.lang.Boolean">
+            <column name="IN_DISLEXIA" />
+        </property>
+        <property name="inGestante" type="java.lang.Boolean">
+            <column name="IN_GESTANTE" />
+        </property>
+        <property name="inLactante" type="java.lang.Boolean">
+            <column name="IN_LACTANTE" />
+        </property>
+        <property name="inIdoso" type="java.lang.Boolean">
+            <column name="IN_IDOSO" />
+        </property>
+        <property name="inAutismo" type="java.lang.Boolean">
+            <column name="IN_AUTISMO" />
+        </property>
+        <property name="inSabatista" type="java.lang.Boolean">
+            <column name="IN_SABATISTA" />
+        </property>
+        <property name="inBraille" type="java.lang.Boolean">
+            <column name="IN_BRAILLE" />
+        </property>
+        <property name="inAmpliada24" type="java.lang.Boolean">
+            <column name="IN_AMPLIADA_24" />
+        </property>
+        <property name="inAmpliada18" type="java.lang.Boolean">
+            <column name="IN_AMPLIADA_18" />
+        </property>
+        <property name="inLedor" type="java.lang.Boolean">
+            <column name="IN_LEDOR" />
+        </property>
+        <property name="inTranscricao" type="java.lang.Boolean">
+            <column name="IN_TRANSCRICAO" />
+        </property>
+        <property name="inLibras" type="java.lang.Boolean">
+            <column name="IN_LIBRAS" />
+        </property>
+        <property name="inLeituraLabial" type="java.lang.Boolean">
+            <column name="IN_LEITURA_LABIAL" />
+        </property>
+        <property name="inMesaCadeiraRodas" type="java.lang.Boolean">
+            <column name="IN_MESA_CADEIRA_RODAS" />
+        </property>
+        <property name="inMesaCadeiraSeparada" type="java.lang.Boolean">
+            <column name="IN_MESA_CADEIRA_SEPARADA" />
+        </property>
+        <property name="inApoioPerna" type="java.lang.Boolean">
+            <column name="IN_APOIO_PERNA" />
+        </property>
+        <property name="inGuiaInterprete" type="java.lang.Boolean">
+            <column name="IN_GUIA_INTERPRETE" />
+        </property>
+        <one-to-one name="socioeconomico" class="enem.entity.Socioeconomico"></one-to-one>
+        <one-to-one name="notas" class="enem.entity.Notas"></one-to-one>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Nov 18, 2017 4:44:35 AM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="enem.entity.Escola" table="escola" catalog="enem" optimistic-lock="version">
+        <id name="codEscola" type="int">
+            <column name="COD_ESCOLA" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="municipio" class="enem.entity.Municipio" fetch="select">
+            <column name="COD_MUNICIPIO_ESC" />
+        </many-to-one>
+        <many-to-one name="uf" class="enem.entity.Uf" fetch="select">
+            <column name="COD_UF_ESC" />
+        </many-to-one>
+        <property name="idDependenciaAdmEsc" type="java.lang.Boolean">
+            <column name="ID_DEPENDENCIA_ADM_ESC" />
+        </property>
+        <property name="idLocalizacaoEsc" type="java.lang.Boolean">
+            <column name="ID_LOCALIZACAO_ESC" />
+        </property>
+        <property name="sitFuncEsc" type="java.lang.Boolean">
+            <column name="SIT_FUNC_ESC" />
+        </property>
+        <set name="candidatos" table="candidato" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="COD_ESCOLA" />
+            </key>
+            <one-to-many class="enem.entity.Candidato" />
+        </set>
+    </class>
+</hibernate-mapping>

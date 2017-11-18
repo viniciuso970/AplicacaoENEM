@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Nov 18, 2017 4:44:35 AM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="enem.entity.Notas" table="notas" catalog="enem" optimistic-lock="version">
+        <id name="nuInscricao" type="long">
+            <column name="NU_INSCRICAO" />
+            <generator class="foreign">
+                <param name="property">candidato</param>
+            </generator>
+        </id>
+        <one-to-one name="candidato" class="enem.entity.Candidato" constrained="true"></one-to-one>
+        <property name="notaCn" type="java.lang.Double">
+            <column name="NOTA_CN" precision="9" />
+        </property>
+        <property name="notaCh" type="java.lang.Double">
+            <column name="NOTA_CH" precision="9" />
+        </property>
+        <property name="notaLc" type="java.lang.Double">
+            <column name="NOTA_LC" precision="9" />
+        </property>
+        <property name="notaMt" type="java.lang.Double">
+            <column name="NOTA_MT" precision="9" />
+        </property>
+        <property name="nuNotaRedacao" type="java.lang.Double">
+            <column name="NU_NOTA_REDACAO" precision="9" />
+        </property>
+    </class>
+</hibernate-mapping>

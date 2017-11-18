@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Nov 18, 2017 4:44:35 AM by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="enem.entity.Municipio" table="municipio" catalog="enem" optimistic-lock="version">
+        <id name="codMunicipio" type="int">
+            <column name="COD_MUNICIPIO" />
+            <generator class="assigned" />
+        </id>
+        <property name="noMunicipio" type="string">
+            <column name="NO_MUNICIPIO" length="150" />
+        </property>
+        <set name="candidatosForCodMunicipioNascimento" table="candidato" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="COD_MUNICIPIO_NASCIMENTO" />
+            </key>
+            <one-to-many class="enem.entity.Candidato" />
+        </set>
+        <set name="candidatosForCodMunicipioProva" table="candidato" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="COD_MUNICIPIO_PROVA" />
+            </key>
+            <one-to-many class="enem.entity.Candidato" />
+        </set>
+        <set name="candidatosForCodMunicipioResidencia" table="candidato" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="COD_MUNICIPIO_residencia" />
+            </key>
+            <one-to-many class="enem.entity.Candidato" />
+        </set>
+        <set name="escolas" table="escola" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="COD_MUNICIPIO_ESC" />
+            </key>
+            <one-to-many class="enem.entity.Escola" />
+        </set>
+    </class>
+</hibernate-mapping>
